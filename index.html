@@ -24,6 +24,7 @@
     <div class="container">
       <h2>Witaj na mojej stronie!</h2>
       <p>Tutaj znajdziesz informacje o moich zainteresowaniach, o mnie oraz sposób, w jaki możemy się skontaktować.</p>
+      <p>Aktualna data i godzina: <span id="currentDateTime"></span></p>
     </div>
   </section>
 
@@ -32,5 +33,20 @@
       <p>&copy; 2024 Moje Zainteresowania</p>
     </div>
   </footer>
+
+  <script>
+    // Pobierz element, w którym będzie wyświetlana data i godzina
+    const currentDateTimeElement = document.getElementById('currentDateTime');
+
+    // Funkcja aktualizująca datę i godzinę co sekundę
+    function updateDateTime() {
+      const now = new Date(); // Pobierz aktualną datę i godzinę
+      const formattedDateTime = now.toLocaleString('pl-PL'); // Sformatuj datę i godzinę do lokalnego formatu
+      currentDateTimeElement.textContent = formattedDateTime; // Wyświetl sformatowaną datę i godzinę
+    }
+
+    // Wywołaj funkcję aktualizującą datę i godzinę co sekundę
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
 </html>
